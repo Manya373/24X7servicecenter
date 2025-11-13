@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>24x7 Service Center - Authorized Repair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0A1F44;
+      --black: #0D0D0D;
+      --white: #ffffff;
+      --gold: #F9D71C;
+      --red: #E63946;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--black);
+      color: var(--white);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--blue);
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .btn-help {
+      background-color: var(--gold);
+      color: var(--blue);
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-help:hover {
+      background-color: var(--red);
+      color: var(--white);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      height: 3px;
+      width: 25px;
+      background-color: var(--white);
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: var(--blue);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        text-align: center;
+      }
+      nav.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: linear-gradient(135deg, var(--blue), #000);
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .btn {
+      background: var(--gold);
+      color: var(--blue);
+      padding: 0.7rem 1.4rem;
+      border-radius: 25px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    /* Image Carousel */
+    .carousel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      overflow: hidden;
+      height: 250px;
+    }
+
+    .carousel img {
+      width: 200px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 0 8px;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.2);
+      transition: transform 0.5s;
+    }
+
+    .carousel img:hover {
+      transform: scale(1.1);
+    }
+
+    section {
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    section h3 {
+      color: var(--gold);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      max-width: 900px;
+      margin: auto;
+      color: #ddd;
+      line-height: 1.8;
+    }
+
+    footer {
+      background: var(--blue);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>24x7 Service Center</h1>
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <button class="btn-help" onclick="openPopup()">Help</button>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Fast, Reliable Appliance Repairs — 24x7 Support</h2>
+    <p>We provide expert repair for Washing Machines, Refrigerators, Microwaves, and ACs with same-day service and certified Whirlpool technicians.</p>
+    <button class="btn" onclick="openPopup()">📞 Book a Service</button>
+
+    <div class="carousel">
+      <img src="OIP (1).jpg" alt="Repairing Technician">
+      <img src="OIP (2).jpg" alt="Appliance Repair">
+      <img src="OIP (3).jpg" alt="Home Visit">
+      <img src="OIP.jpg" alt="Whirlpool Support">
+    </div>
+  </section>
+
+  <section id="about">
+    <h3>About Our Service</h3>
+    <p>
+      With over 25 years of experience, <strong>24x7 Service Center</strong> is the trusted name in appliance repair and maintenance.  
+      We offer genuine Whirlpool parts, skilled technicians, and transparent pricing — ensuring your comfort is never compromised.
+      <br><br>
+      Our technicians are trained professionals, equipped to handle complex issues quickly and safely.  
+      Our commitment is to keep your appliances running smoothly so your daily routine never stops.
+      <br><br>
+      ✅ Certified Experts  
+      ✅ Genuine Spare Parts  
+      ✅ Same-Day Service  
+      ✅ Service Warranty  
+      ✅ 24x7 Helpline Support
+    </p>
+  </section>
+
+  <section id="services">
+    <h3>Our Key Services</h3>
+    <p>
+      • Washing Machine, Refrigerator, and Microwave Repair<br>
+      • Air Conditioner Installation & Maintenance<br>
+      • Preventive Maintenance & AMC Plans<br>
+      • Genuine Whirlpool Parts Replacement<br>
+      • Same-Day Technician Visit<br>
+      • Transparent Pricing & Instant Booking<br>
+      • Emergency 24x7 Support
+    </p>
+  </section>
+
+  <section id="contact">
+    <h3>Contact Us</h3>
+    <p>
+      📞 Toll-Free Number: <strong>18001021745</strong><br>
+      ⏰ Working Hours: 7 Days (7am - 11pm)<br>
+      🌐 Email: <strong>support@24x7servicecenter.in</strong><br>
+      📍 Address: Near City Center Mall, Jammu, India
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 24x7 Service Center | All Rights Reserved</p>
+    <p>
+      <a href="#home">Home</a> |
+      <a href="#about">About</a> |
+      <a href="#services">Services</a> |
+      <a href="#contact">Contact</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+
+    function openPopup() {
+      alert("📞 Toll-Free Helpline: 18001021745\nOur Hightech-certified experts are available 24x7 to assist you!");
+    }
+  </script>
+</body>
+</html>
